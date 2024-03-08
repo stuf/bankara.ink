@@ -1,0 +1,37 @@
+---
+const { title } = Astro.props;
+
+const now = new Date();
+
+const startYear = 2021;
+const currentYear = now.getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - bankara</title>
+  </head>
+  <body class="font-serif">
+    <header class="border-2 border-red-500">
+      <h1>bankara</h1>
+    </header>
+
+    <slot />
+
+    <footer>
+      &copy; {
+        startYear === currentYear ? (
+          startYear
+        ) : (
+          <>
+            {startYear}&ndash;{currentYear}
+          </>
+        )
+      }
+    </footer>
+  </body>
+</html>
