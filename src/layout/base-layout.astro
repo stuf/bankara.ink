@@ -16,22 +16,6 @@ const currentYear = now.getFullYear();
     <title>{title} - bankara</title>
   </head>
   <body class="font-serif">
-    <header class="border-2 border-red-500">
-      <h1>bankara</h1>
-    </header>
-
     <slot />
-
-    <footer>
-      &copy; {
-        startYear === currentYear ? (
-          startYear
-        ) : (
-          <>
-            {startYear}&ndash;{currentYear}
-          </>
-        )
-      }
-    </footer>
   </body>
 </html>
